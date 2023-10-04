@@ -1,0 +1,17 @@
+{
+    "githubRepositoryManager.alwaysCloneToDefaultDirectory": true,
+    "githubRepositoryManager.directoriesToIgnore": [
+        
+        "node_modules",
+        ".vscode",
+        ".git/*",
+        "logs",
+        "images",
+        "src",
+        "lib",
+        "out",
+        "build",
+        "etc",
+        "public"
+    ]
+}
