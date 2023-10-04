@@ -1,3 +1,4 @@
+
 import {Button,ButtonGroup,styled } from "@mui/material"
 import { useState } from "react";
 
@@ -9,10 +10,10 @@ const StyledButton = styled(Button)`
 `;
 const GroupButton = () => {
     const [ count, setCount ] = useState(1);
-    const incQua = () => {
+    const incQuantity = () => {
         setCount(count + 1);
     };
-    const decQua = () => {
+    const decQuantity = () => {
         if (count > 1){
             setCount(count - 1);
         }
@@ -21,9 +22,9 @@ const GroupButton = () => {
 
     return(
         <Component>
-            <StyledButton onClick={decQua}>-</StyledButton>
+            <StyledButton onClick={decQuantity}>-</StyledButton>
             <Button disabled>{count}</Button>
-            <StyledButton onClick={incQua}>+</StyledButton>
+            <StyledButton onClick={incQuantity}>+</StyledButton>
         </Component>
     )
 }

@@ -32,3 +32,24 @@ export const userLogIn = async (request, response) => {
         response.json('Error: ', error.message);        
     }
 }
+export const editUser = async (request, response) => {
+    try {
+      const userId = request.params.id; 
+      
+      const existingUser = await User.findOne({ id: userId });
+      
+      if (!existingUser) {
+        return response.status(404).json({ message: 'User not found' });
+      }
+  
+      const editedUserData = request.body;
+
+      Object.assign(existingUser, editedUserData);
+  
+      await existingUser.save();
+  
+      response.status(200).json({ message: 'user updated successfully', user: existingUser });
+    } catch (error) {
+      response.status(500).json({ message: error.message });
+    }
+  }

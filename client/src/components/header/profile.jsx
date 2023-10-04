@@ -22,7 +22,7 @@ const Profile = ({account,setAccount}) => {
     }
     return(
         <>
-        <Box onClick={handleClick}><Typography style = {{ marginTop: 2,cursor:'pointer' }}>{account}</Typography> </Box>
+        <Box onClick={handleClick}><Typography style = {{ marginTop: 2,cursor:'pointer' }}>Logout</Typography> </Box>
         <Component
         
         anchorEl={open}

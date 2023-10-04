@@ -1,4 +1,3 @@
-
 import { Typography, Box, styled } from '@mui/material';
 
 const Component = styled(Box)`
@@ -6,6 +5,12 @@ const Component = styled(Box)`
     height: 65vh;
     background: #fff;
     margin: 80px 140px;
+    background: linear-gradient(
+        to bottom,
+        #DDAF94,
+        #E8CEBF,
+        #FDF8F5
+      ); 
 `;
 
 const Container = styled(Box)`
@@ -32,6 +37,3 @@ const EmptyCart = () => {
 }
 
 export default EmptyCart;
-
-
-

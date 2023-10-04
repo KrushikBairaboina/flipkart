@@ -6,6 +6,8 @@ import { Box } from '@mui/material';
 import {BrowserRouter, Route, Routes } from 'react-router-dom';
 import DetailView from './components/details/DetailView';
 import Cart from './components/cart/Cart';
+import Order from './components/orders/orders';
+import Account from './components/account/account';
 
 class App extends Component {
   render() {
@@ -17,7 +19,9 @@ class App extends Component {
         <Routes>
           <Route path= '/' element={<Home />} />
           <Route path= '/product/:id' element={<DetailView/>}/>
+          <Route path='/orders' element={<Order/>}/>
           <Route path= '/cart' element={<Cart/>}/>
+          <Route path='/account/:userId' element={<Account/>}/>
         </Routes>
         </Box>
         </BrowserRouter>

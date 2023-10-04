@@ -32,7 +32,6 @@ const ActionItem = ({product}) =>{
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const [quantity, setQuantity] = useState(1);
-    
     const { id } = product;
     const addItemToCart = () => {
         dispatch(addToCart(id, quantity));

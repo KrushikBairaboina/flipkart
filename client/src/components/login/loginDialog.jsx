@@ -61,6 +61,7 @@ const RequestOTP = styled(Button)`
     box-shadow: 0 2px 4px 0 rgb(0 0 0 / 20%);
 `;
 const signupInitialValues = {
+    id:'',
     firstname: '',
     lastname: '',
     username: '',
@@ -120,18 +121,17 @@ const LoginDialog = ({open,setOpen}) => {
         setSignup({ ...signup, [e.target.name]: e.target.value });
         console.log(signup);
     }
-    const loginUser = async() => {
+    const loginUser = async () => {
         let response = await authenticateLogin(login);
         console.log(response);
-        if(response.status === 200) 
-        {
+        if (response.status === 200) {
             handleClose();
-            setAccount(response.data.data.firstname);
+            setAccount(response.data.data); 
         } else {
             setError(true);
         }
-
     }
+    
 
 
     return (
@@ -151,7 +151,7 @@ const LoginDialog = ({open,setOpen}) => {
                 <LoginButton onClick={()=> loginUser()}>Login</LoginButton>
                 <Typography style={{textAlign:'center'}}>OR</Typography>
                 <RequestOTP>Request OTP</RequestOTP>
-                <CreateAccount onClick={() => toggleSignup()}>New to Flipkart? Create an account</CreateAccount>
+                <CreateAccount onClick={() => toggleSignup()}>New Customer? Create an account</CreateAccount>
             </Wrapper>   
             :
             <Wrapper>

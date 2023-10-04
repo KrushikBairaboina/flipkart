@@ -1,5 +1,4 @@
 import mongoose from "mongoose";
-import { products } from '../constants/data.js';
 
 const productSchema = new mongoose.Schema({
     id: {

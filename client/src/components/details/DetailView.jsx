@@ -24,7 +24,7 @@ const RightContainer = styled(Grid)`
     }
 `;
 const DetailView = () => {
-
+   
     const dispatch = useDispatch();
     const {id} = useParams();
     const { loading, product } = useSelector(state => state.getProductDetails);
