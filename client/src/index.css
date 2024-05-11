@@ -5,7 +5,18 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #F2F2F2
+  background-color: #f2f2f2;
+}
+
+
+body::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+body > .content-wrapper {
+  height: 100vh; 
+  overflow-y: scroll; 
 }
 
 code {

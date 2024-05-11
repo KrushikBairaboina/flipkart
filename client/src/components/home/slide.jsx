@@ -23,12 +23,23 @@ const Component = styled(Box)`
     margin-top: 10px;
     background: #FFFFFF;
 `;
-const ViewAllButton = styled(Button)`
-    margin-left: auto;
-    background-color: #2874f0;
-    border-radius: 2px;
-    font-size: 13px;
-`;
+const ViewAllButton = styled(Link)(({ theme }) => ({
+    
+    color: '#2874f0',
+    background: '#FFFFFF',
+    textTransform: 'none',
+    fontWeight: 600,
+    marginLeft:"auto",
+    borderRadius: 2,
+    textDecoration: 'none',
+    padding: '5px 40px',
+    height: 32,
+    boxShadow: 'none',
+    [theme.breakpoints.down('sm')]: {
+        background: '#2874f0',
+        color: '#FFFFFF'
+    }
+}));
 const Image = styled('img')({
     width: 'auto',
     height: 150
@@ -73,7 +84,7 @@ const Slide = ({products,title,timer}) => {
                     </Timer>
 
                 }
-                <ViewAllButton variant="contained" color="primary">View All</ViewAllButton>
+                <ViewAllButton to="/view" variant="contained"  >View All</ViewAllButton>
             </Deal>
             <Divider/>
             <Carousel

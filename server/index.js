@@ -8,7 +8,13 @@ const app = express();
 dotenv.config();
 app.use(bodyParser.json({ extended: true }));
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(cors());
+app.use(cors(
+    {
+        origin:["https://flipkart-whq.vercel.app"],
+        methods: ["POST","GET"],
+        credentials: true
+    }
+));
 app.use('/',Router);
 const PORT = 8000;
 const USERNAME = process.env.DB_USERNAME;
